@@ -4,12 +4,12 @@ export const useForm = initialValue => {
     const [showSuccessMessage, setSuccessMessage] = useState(false);
     const [values, setValues] = useState(initialValue)
 
-    const handleChange = e =>{
+    const handleChanges = e =>{
         setValues({...values, [e.target.name]: e.target.value})
     }
     const handleSubmit = e =>{
         e.preventDefault();
         setSuccessMessage(true)
     }
-    return [handleChange, handleSubmit, values, showSuccessMessage]
+    return [handleChanges, handleSubmit, values, showSuccessMessage]
 }
